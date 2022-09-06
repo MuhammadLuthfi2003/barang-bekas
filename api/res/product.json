@@ -1,0 +1,8 @@
+{
+    "id" : "1",
+    "name" : "Lenovo Ideapad 3",
+    "description" : "laptop Lenovo Ideapad 3 dengan RAM 4GB dan SSD 256GB",
+    "price" : 10000000,
+    "stock" : 10,
+    "category_id" : "1"
+}

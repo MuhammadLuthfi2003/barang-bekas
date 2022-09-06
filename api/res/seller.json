@@ -1,0 +1,27 @@
+{
+    "id" : "1",
+    "name" : "John Store",
+    "email" : "john@mail.com",
+    "wa" : "6281234567890",
+    "address" : "Jl. Raya No. 1",
+    "products" : [
+        {
+            "id": "1",
+            "name": "Lenovo",
+            "price": "1000",
+            "description": "Lenovo Laptop"
+        },
+        {
+            "id": "2",
+            "name": "Dell",
+            "price": "2000",
+            "description": "Dell Laptop"
+        },
+        {
+            "id": "3",
+            "name": "HP",
+            "price": "3000",
+            "description": "HP Laptop"
+        }
+    ]
+}
