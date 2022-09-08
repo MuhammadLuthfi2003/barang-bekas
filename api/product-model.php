@@ -1,0 +1,118 @@
+<?php
+
+require_once "../helper/conn.php";
+
+class Product
+{
+    public function get_all():void
+    {
+        global $conn;
+        $query = "SELECT * from product";
+        $data = array();
+        $result = $conn->query($query);
+        while ($row = mysqli_fetch_object($result)) 
+        {
+            $data[]=$row;
+        }
+        $response=array(
+            'status' => 200,
+            'message' => 'get all product success',
+            'data' => $data
+        );
+        header('Content-Type: application/json');
+        echo json_encode($response);
+    }
+
+    public function get_detail($id):void
+    {
+        global $conn;
+        $query = "SELECT FROM product WHERE id=$id";
+        $result = $conn->query($query);
+        while ($row = mysqli_fetch_object($result))
+        {
+            $data[] = $row;
+        }
+        if ($data) {
+            $response = array(
+                'status' => 200,
+                'message' => 'success get product by id',
+                'data' => $data
+            );
+        }else{
+            $response = array(
+                'status' => 404,
+                'message' =>'No Data Found'
+            );
+        }
+        header('Content-Type: application/json');
+        echo json_encode($response);
+    }
+
+    public function get_by_category($category_id):void
+    {
+        global $conn;
+        $category_name = "SELECT name FROM category WHERE id=$category_id";
+        $query = "SELECT * FROM product WHERE category_id=$category_id"; 
+        $result = $conn->query($query);
+        while ($row = mysqli_fetch_object($result)) 
+        {
+            $data[]=$row;
+        }
+        $response=array(
+            'status' => 200,
+            'message' => 'get product by category success',
+            'category' => $category_name,
+            'data' => $data
+        );
+        header('Content-Type: application/json');
+        echo json_encode($response);
+    }
+
+    public function sort_price($price='none'):void
+    {
+        global $conn;
+        switch ($price) {
+            case 'termurah':
+                $query = "SELECT * FROM product ORDER BY price ASC";
+                break;
+            case 'termahal':
+                $query = "SELECT * FROM product ORDER BY price DESC";
+                break;
+            default:
+                $query = "SELECT * FROM product";
+                break;
+        }
+        $data = array();
+        $result = $conn->query($query);
+        while ($row = mysqli_fetch_object($result)) 
+        {
+            $data[]=$row;
+        }
+        $response=array(
+            'status' => 200,
+            'message' => 'sort product',
+            'mode' => $price,
+            'data' => $data
+        );
+        header('Content-Type: application/json');
+        echo json_encode($response);
+    }
+    public function search_product($keyword):void
+    {
+        $query = "SELECT * FROM product WHERE name LIKE '%$keyword%'";
+        $data = array();
+        $result = $conn->query($query);
+        while ($row = mysqli_fetch_object($result)) 
+        {
+            $data[]=$row;
+        }
+        $response=array(
+            'status' => 200,
+            'message' => 'search product',
+            'query' => $keyword,
+            'data' => $data
+        );
+        header('Content-Type: application/json');
+        echo json_encode($response);
+    }
+}
