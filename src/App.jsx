@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 import {
     BrowserRouter as Router,
     Routes as Switch,
@@ -7,7 +7,10 @@ import {
 
 import './styles/index.css';
 
-import {Navbar} from './components/navbar.jsx';
+import Navbar from './components/navbar.jsx';
+import Landingpage from './dirs/landingpage';
+import About from './dirs/about';
+import Categories from './dirs/categories';
 
 class App extends React.Component {
 
@@ -19,8 +22,10 @@ class App extends React.Component {
                 <Switch>
                     
                     <Route path='/' element={<Landingpage />} />
-                    <Route path='/categories' element={<Landingpage />} />
-
+                    <Route path='/categories' element={<Categories />} />
+                    <Route path='/about' element={<About />} />
+                    <Route path='/contact' element={<Contact />} />
+                    
                 </Switch>
             </div>
         </div>
