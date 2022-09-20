@@ -1,11 +1,11 @@
 <?php
 
-require_once "../helper/conn.php";
+require_once "./category-model.php";
 
-class Category
-{
-    public function get_all():void
-    {
-        
-    }
+$category = new Category();
+
+if (!empty($_GET["id"])) {
+    $category->get_detail($_GET["id"]);
+} else {
+    $category->get_all();
 }

@@ -26,7 +26,7 @@ class Product
     public function get_detail($id):void
     {
         global $conn;
-        $query = "SELECT FROM product WHERE id=$id";
+        $query = "SELECT * FROM product WHERE id=$id";
         $result = $conn->query($query);
         while ($row = mysqli_fetch_object($result))
         {
@@ -99,6 +99,7 @@ class Product
     }
     public function search_product($keyword):void
     {
+        global $conn;
         $query = "SELECT * FROM product WHERE name LIKE '%$keyword%'";
         $data = array();
         $result = $conn->query($query);
@@ -108,8 +109,28 @@ class Product
         }
         $response=array(
             'status' => 200,
-            'message' => 'search product',
+            'message' => 'search product success',
             'query' => $keyword,
+            'data' => $data
+        );
+        header('Content-Type: application/json');
+        echo json_encode($response);
+    }
+
+    public function get_by_seller($seller_id):void
+    {
+        global $conn;
+        $seller_name = "SELECT name FROM seller WHERE id=$seller_id";
+        $query = "SELECT * FROM product WHERE seller_id=$seller_id"; 
+        $result = $conn->query($query);
+        while ($row = mysqli_fetch_object($result)) 
+        {
+            $data[]=$row;
+        }
+        $response=array(
+            'status' => 200,
+            'message' => 'get product by seller success',
+            'seller' => $seller_name,
             'data' => $data
         );
         header('Content-Type: application/json');
