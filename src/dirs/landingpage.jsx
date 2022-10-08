@@ -8,4 +8,4 @@ function Landingpage() {
     )
 }
 
-export {Landingpage};
+export default Landingpage;

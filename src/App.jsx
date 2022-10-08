@@ -7,30 +7,30 @@ import {
 
 import './styles/index.css';
 
-import {Navbar} from './components/navbar.jsx';
-import {Landingpage} from './dirs/landingpage';
-import {About} from './dirs/about';
-import {Categories} from './dirs/categories';
-import {Contact} from './dirs/contact';
+import Navbar from './components/navbar.jsx';
+import Landingpage from './dirs/landingpage.jsx';
+import About from './dirs/about.jsx';
+import Categories from './dirs/categories.jsx';
+import Contact from './dirs/contact.jsx';
 
-class App extends React.Component {
+function App() {
+    return (
+        <Router>
+            <div>
+                <Navbar />
+                <div className='main'>
+                    <Switch>
+                        
+                        <Route path='/' element={<Landingpage />} />
+                        <Route path='/categories' element={<Categories />} />
+                        <Route path='/about' element={<About />} />
+                        <Route path='/contact' element={<Contact />} />
 
-
-    render() {
-        <div>
-            <Navbar />
-            <div className='main'>
-                <Switch>
-                    
-                    <Route path='/' element={<Landingpage />} />
-                    <Route path='/categories' element={<Categories />} />
-                    <Route path='/about' element={<About />} />
-                    <Route path='/contact' element={<Contact />} />
-
-                </Switch>
+                    </Switch>
+                </div>
             </div>
-        </div>
-    }
+        </Router>
+    )
 }
 
 export default App;
