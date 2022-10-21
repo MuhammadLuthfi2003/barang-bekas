@@ -5,6 +5,6 @@ $seller = new Seller();
 
 if (!empty($_GET["id"])) {
     $seller->get_detail($_GET["id"]);
-} else {
+} else {    
     $seller->get_all();
 }
