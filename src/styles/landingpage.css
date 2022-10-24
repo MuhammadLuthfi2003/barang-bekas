@@ -1,0 +1,57 @@
+.header-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight:700;
+    color: #fff;
+}
+
+
+.search-input-wrapper {
+    margin-left: 15vw;
+    margin-right: 15vw;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+}
+
+.search-input i {
+    position: absolute;
+}
+
+.search-input {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.search-icon {
+    padding: 10px;
+    min-width: 40px;
+    color: #61B2EB;
+}
+
+.search-input-field {
+    width: 100%;
+    padding: 10px;
+    padding-left: 2.5vw;
+    /* text-align: center; */
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+.search-input-field:focus {
+    outline: 3px solid #61B2EB;
+    border: 1px solid #61B2EB;
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+.header {
+    background-image: url(../assets/img-toko.png);
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+}
+

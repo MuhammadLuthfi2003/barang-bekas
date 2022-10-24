@@ -3,10 +3,14 @@ import { Link } from "react-router-dom";
 
 import '../styles/navbar.css';
 
+//import image
+import ylxdefault from '../assets/logo_ylx.png';
+
 class Navbar extends React.Component {
     constructor(props) {
-        super(props)
-        
+        super(props)   
+
+        this.activateNav = this.activateNav.bind(this);
     }
 
     activateNav() {
@@ -19,7 +23,8 @@ class Navbar extends React.Component {
         return (
             <nav className='navbar'>
                 <div className='navbar-logo'>
-
+                    <img src={ylxdefault} alt='logo' className='ylx_default'/>
+                    <div className="navbar-text">YLX.com</div>
                 </div>
 
                 <button className='toggle-btn' onClick={this.activateNav}>
@@ -32,16 +37,16 @@ class Navbar extends React.Component {
                 <div className='navbar-links'>
                     <ul>
                         <li>
-                            <Link to='/'>Home</Link>
+                            <Link to='/' className='navbar-links-dir'>Home</Link>
                         </li>
                         <li>
-                            <Link to='/categories'>Categories</Link>
+                            <Link to='/categories' className='navbar-links-dir'>Categories</Link>
                         </li>
                         <li>
-                            <Link to='/about'>About</Link>
+                            <Link to='/about' className='navbar-links-dir'>About</Link>
                         </li>
                         <li>
-                            <Link to='/contact'>Contact</Link>
+                            <Link to='/contact' className='navbar-links-dir'>Contact</Link>
                         </li>
                     </ul>
                 </div>
