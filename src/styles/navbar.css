@@ -21,21 +21,20 @@
 .navbar-text {
     font-size: 3rem;
     font-weight: bold;
-    margin-left: 2rem;
+    margin-left: 1.5rem;
     margin-top: 0.2rem;
 }
 
 .ylx_default {
-    width: 7%;
-    height: auto;
-    margin-left: 8rem;
+    height: 5rem;
+    margin-left: 8rem; 
 }
 
 .navbar-links ul {
     margin: 0;
     padding: 0;
     display: flex;
-    padding-right: 5rem;
+    padding-right: 8rem;
 }
 
 .navbar-links li {
@@ -59,15 +58,16 @@
 
 .toggle-btn {
     position: absolute;
-    top: 1.2em;
+    top: 2rem;
     right: 2rem;
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    background-color: transparent;
-    border: none;
+    width: 40px;
+    height: 30px;
+    border: 2px solid rgb(255, 255, 255);
+    padding: 1px;
+    border-radius: 5px;
     cursor: pointer;
 
 }
@@ -75,12 +75,41 @@
 .toggle-btn .bar {
     height: 3px;
     width: 100%;
-    background-color: #3d3b40;
+    background-color: #ffffff;
     border-radius: 5px;
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
 
 }
 
-@media only screen and (max-width: 600px) {
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+    .ylx_default {
+        margin-left: 1rem; 
+    }
+
+    .navbar-links ul {
+        padding-right: 1rem;
+    }
+
+    .navbar-links li .navbar-links-dir {
+        padding: 2.5rem 1rem;
+    }
+} 
+
+@media only screen and (max-width: 768px) {
+    .navbar-links ul {
+        padding-right: 0;
+      }
+
+    .navbar-logo {
+        padding-top: 0.3rem;
+        padding-bottom: 0.3rem;
+    }
+
     .toggle-btn {
         display: flex;
     }

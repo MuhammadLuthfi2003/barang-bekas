@@ -8,6 +8,8 @@ import {
 import './styles/index.css';
 
 import Navbar from './components/navbar.jsx';
+import Footer from './components/footer.jsx';
+
 import Landingpage from './dirs/landingpage.jsx';
 import About from './dirs/about.jsx';
 import Categories from './dirs/categories.jsx';
@@ -28,6 +30,7 @@ function App() {
 
                     </Switch>
                 </div>
+                <Footer />
             </div>
         </Router>
     )

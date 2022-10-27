@@ -1,0 +1,33 @@
+.footer {
+    background-color: var(--darkblue);
+}
+
+.footer-top {
+    padding-top: 2rem;
+}
+
+.footer-top-logo {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-top-logo-img {
+    width: 7%;
+    height: auto;
+    margin-left: 8rem;
+}
+
+.footer-top-logo-text {
+    color: #fff;
+}
+
+.footer-top-logo-text-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-left: 2rem;
+    margin-top: 0.2rem;
+}
+
+.footer-top-logo-text-subtitle {
+    margin-left: 2rem;
+}

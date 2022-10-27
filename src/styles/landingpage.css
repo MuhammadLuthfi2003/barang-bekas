@@ -25,7 +25,7 @@
 .search-icon {
     padding: 10px;
     min-width: 40px;
-    color: #61B2EB;
+    color: var(--lightblue);
 }
 
 .search-input-field {
@@ -38,20 +38,112 @@
     transition: all 0.3s ease-in-out;
     -webkit-transition: 0.5s;
     transition: 0.5s;
-    outline: none;
+    outline: 1px solid #ccc;
 }
 
 .search-input-field:focus {
-    outline: 3px solid #61B2EB;
-    border: 1px solid #61B2EB;
+    outline: 3px solid var(--lightblue);
+    border: 1px solid var(--lightblue);
     transition: all 0.3s ease-in-out;
 }
-
-
 
 .header {
     background-image: url(../assets/img-toko.png);
     padding-top: 8rem;
     padding-bottom: 8rem;
+    box-shadow: -1px 10px 22px 0px rgba(0,0,0,0.75);
 }
 
+.categories {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.categories-header {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--lightblue);
+}
+
+.categories-footer {
+    text-align: center;
+}
+
+.categories-footer-text {
+    color: var(--yellow);
+    font-weight: 500;
+    font-size: 2.5rem;
+}
+
+.categories-footer-button button {
+    color: #fff;
+    background-color: var(--yellow);
+    border: none;
+    border-radius: 20px;
+    padding: 1rem 5rem;
+    transition: all 0.3s ease-in-out;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.categories-footer-button button:hover {
+    background-color: #ddd162;
+    color: rgb(43, 43, 43);
+    transition: all 0.3s ease-in-out;
+}
+
+.why-ylx {
+    background-color: var(--yellow);
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    color: #fff;
+}
+
+.why-ylx-header {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.why-ylx-list {
+    display: flex;
+    flex-direction: row;
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+.why-ylx-list-item {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.why-ylx-list-item-icon {
+    text-align: center;
+    font-size: 5rem;
+}
+
+.why-ylx-icon-truck {
+    font-size: 10rem;
+    color: #fff;
+    
+}
+
+.why-ylx-icon-phone {
+    font-size: 10rem;
+    color: #fff;
+}
+
+.why-ylx-icon-card {
+    font-size: 10rem;
+    color: #fff;
+}
+
+.why-ylx-list-item-text {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+}

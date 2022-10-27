@@ -14,7 +14,7 @@ class Navbar extends React.Component {
     }
 
     activateNav() {
-        const navbarLinks = document.getElementsByClassName('nav-menu')[0];
+        const navbarLinks = document.getElementsByClassName('navbar-links')[0];
 
         navbarLinks.classList.toggle('active');
     }
@@ -22,10 +22,10 @@ class Navbar extends React.Component {
     render() {
         return (
             <nav className='navbar'>
-                <div className='navbar-logo'>
+                <a className='navbar-logo h-full' href="/">
                     <img src={ylxdefault} alt='logo' className='ylx_default'/>
-                    <div className="navbar-text">YLX.com</div>
-                </div>
+                    <div className="navbar-text self-center text-xl">YLX.com</div>
+                </a>
 
                 <button className='toggle-btn' onClick={this.activateNav}>
                     <span className='bar'></span>
