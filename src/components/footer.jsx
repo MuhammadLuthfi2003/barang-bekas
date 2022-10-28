@@ -39,11 +39,20 @@ class Footer extends React.Component {
                     </div>
 
                     <div className='footer-body'>
-
+                        <div className='footer-body-title'>Contact Us!</div>
+                        <div className='footer-body-address'>Jln. Lorem Ipsum</div>
+                        <div className="footer-body-number">+62810XXXXXXXX</div>
                     </div>
 
                     <div className="footer-bottom">
-
+                        <div className='copyright'>Copyright Luthfi, Aliif, Fikri</div>
+                        <div className='socials'>
+                            <div className='circle'></div>
+                            <div className='circle'></div>
+                            <div className='circle'></div>
+                            <div className='circle'></div>
+                            <div className='circle'></div>
+                        </div>
                     </div>
 
                 </footer>
