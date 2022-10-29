@@ -6,12 +6,17 @@ import CategoryItem from '../mini-components/category-item';
 
 //import css
 import '../styles/landingpage.css';
+import '../styles/index.css';
+
+//import components
+import Navbar from '../components/navbar.jsx';
+import Footer from '../components/footer.jsx';
 
 // temp import img, delete later
 import car from '../assets/stock photos/car.png';
 import laptop from '../assets/stock photos/laptop.png';
 import phone from '../assets/stock photos/phone.png';
-import { faLaptopMedical } from '@fortawesome/free-solid-svg-icons';
+
 
 const items = [
     {
@@ -30,7 +35,8 @@ const items = [
 
 function Landingpage() {
     return (
-        <div>
+        <div className='main'>
+            <Navbar />
             <div className="header">
                 <div className="header-title">YLX pusatnya nge-deal!</div>
                 
@@ -96,7 +102,7 @@ function Landingpage() {
                     </div>
                 </div>
             </div>
-
+            <Footer/>                    
         </div>
     )
 }

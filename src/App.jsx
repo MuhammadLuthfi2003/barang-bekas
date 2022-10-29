@@ -17,22 +17,20 @@ import Contact from './dirs/contact.jsx';
 
 function App() {
     return (
-        <Router>
+        <>
             <div>
                 <Navbar />
                 <div className='main'>
                     <Switch>
-                        
                         <Route path='/' element={<Landingpage />} />
                         <Route path='/categories' element={<Categories />} />
                         <Route path='/about' element={<About />} />
                         <Route path='/contact' element={<Contact />} />
-
                     </Switch>
                 </div>
                 <Footer />
             </div>
-        </Router>
+        </>
     )
 }
 
