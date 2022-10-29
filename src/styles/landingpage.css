@@ -60,7 +60,9 @@
 }
 
 .categories-list {
-    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+    margin: 1rem 8rem 1rem 8rem;
 }
 
 .categories-header {

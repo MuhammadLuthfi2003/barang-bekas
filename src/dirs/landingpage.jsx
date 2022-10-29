@@ -1,8 +1,32 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+//import mini component
+import CategoryItem from '../mini-components/category-item';
+
 //import css
 import '../styles/landingpage.css';
+
+// temp import img, delete later
+import car from '../assets/stock photos/car.png';
+import laptop from '../assets/stock photos/laptop.png';
+import phone from '../assets/stock photos/phone.png';
+import { faLaptopMedical } from '@fortawesome/free-solid-svg-icons';
+
+const items = [
+    {
+        title : 'Laptop',
+        image : laptop
+    },
+    {
+        title : 'Handphone',
+        image : phone
+    },
+    {
+        title : 'Mobil',
+        image : car
+    }
+]
 
 function Landingpage() {
     return (
@@ -23,12 +47,18 @@ function Landingpage() {
                     Our Categories
                 </div>
                 <div className="categories-list">
-
+                    {
+                        items.map((item, index) => {
+                            return (
+                                <CategoryItem title={item.title} image={item.image} key={index}/>
+                            )
+                        })
+                    }
                 </div>
                 <div className="categories-footer">
                     <div className="categories-footer-text">dan lebih banyak lagi...</div>
                     <div className="categories-footer-button">
-                        <button type="button" className="categories-footer-button-text">Lihat Semua</button>
+                        <button type="button" className="categories-footer-button-text" onClick={() => {location.href = '/categories'}}>Lihat Semua</button>
                     </div>
                 </div>
             </div>
