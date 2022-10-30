@@ -1,8 +1,7 @@
 import React from 'react';
 
 
-
-function Categories() {
+function CategoriesList() {
     return (
         <div className='main'>
             <div className='categories'>
@@ -12,4 +11,4 @@ function Categories() {
     )
 }
 
-export default Categories;
+export default CategoriesList;

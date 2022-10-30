@@ -1,0 +1,14 @@
+.search {
+    background-image: url(../assets/img-toko.png);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    box-shadow: -1px 10px 22px 0px rgba(0,0,0,0.75);
+}
+
+.search-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight:700;
+    color: #fff;
+    margin-bottom: 1rem;
+}
