@@ -14,10 +14,11 @@ import Landingpage from './dirs/landingpage.jsx';
 import About from './dirs/about.jsx';
 import Categories from './dirs/categories.jsx';
 import Contact from './dirs/contact.jsx';
+import ErrorPage from './dirs/error.jsx';
 
 function App() {
     return (
-        <>
+        <Router>
             <div>
                 <Navbar />
                 <div className='main'>
@@ -26,11 +27,12 @@ function App() {
                         <Route path='/categories' element={<Categories />} />
                         <Route path='/about' element={<About />} />
                         <Route path='/contact' element={<Contact />} />
+                        <Route path="*" element={<ErrorPage />} />
                     </Switch>
                 </div>
                 <Footer />
             </div>
-        </>
+        </Router>
     )
 }
 

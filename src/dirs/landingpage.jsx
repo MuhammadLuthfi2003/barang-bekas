@@ -6,11 +6,6 @@ import CategoryItem from '../mini-components/category-item';
 
 //import css
 import '../styles/landingpage.css';
-import '../styles/index.css';
-
-//import components
-import Navbar from '../components/navbar.jsx';
-import Footer from '../components/footer.jsx';
 
 // temp import img, delete later
 import car from '../assets/stock photos/car.png';
@@ -36,7 +31,6 @@ const items = [
 function Landingpage() {
     return (
         <div className='main'>
-            <Navbar />
             <div className="header">
                 <div className="header-title">YLX pusatnya nge-deal!</div>
                 
@@ -101,8 +95,7 @@ function Landingpage() {
                         </div>
                     </div>
                 </div>
-            </div>
-            <Footer/>                    
+            </div>                 
         </div>
     )
 }
