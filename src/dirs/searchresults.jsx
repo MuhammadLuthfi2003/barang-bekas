@@ -10,7 +10,10 @@ function SearchResults() {
         <>
             <div className='main'>
                 <div className='search-results'>
-                    <h1>Hasil pencarian untuk: {keyword}</h1>
+                    <h1 className='search-results-title'>Hasil pencarian untuk: {keyword}</h1>
+                    <div className='search-results-wrapper'>
+                        {/*put css grid in here after getting the result */}
+                    </div>
                 </div>
             </div>
         </>

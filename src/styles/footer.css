@@ -168,3 +168,39 @@
     }
 }
 
+@media only screen and (max-width: 600px) {
+    .footer > div {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .footer-top-logo-text-title {
+        font-size: 2rem;
+    }
+
+    .footer-top-logo-text-subtitle {
+        font-size: 1rem;
+    }
+
+    .footer-links ul li {
+        font-size: 1rem;
+    }
+
+    .footer-body-title {
+        font-size: 1.2rem;
+    }
+
+    .footer-body-number {
+        font-size: 1rem;
+    }
+
+    .socials {
+        margin-bottom: 0.5rem;
+    }
+
+    .circle {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+

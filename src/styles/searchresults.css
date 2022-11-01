@@ -1,0 +1,13 @@
+.search-results {
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.search-results-title {
+    text-align: center;
+    font-size: 1rem;
+    font-weight:500;
+    color: rgb(125, 125, 125);
+    margin-bottom: 1rem;
+    margin-top: 1em;
+}

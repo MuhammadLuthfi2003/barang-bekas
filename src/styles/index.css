@@ -27,3 +27,9 @@
     font-family: 'Inter', sans-serif;
 }
 
+@media screen and (max-width: 600px) {
+    .main {
+        overflow-x: hidden;
+    }
+}
+

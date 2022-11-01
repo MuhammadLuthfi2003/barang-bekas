@@ -137,3 +137,24 @@
     }
 }
 
+@media only screen and (max-width: 600px) {
+
+    .navbar-links li .navbar-links-dir {
+        padding: 0.5em 0.5em;
+    }
+
+    .ylx_default {
+        height: 3rem;
+        margin-left: 0.5rem;
+    }
+
+    .navbar-text {
+        font-size: 2rem;
+    }
+
+    .toggle-btn {
+        top: 1rem;
+        right: 1rem;
+    }
+}
+

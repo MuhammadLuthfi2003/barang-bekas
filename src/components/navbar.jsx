@@ -24,7 +24,7 @@ class Navbar extends React.Component {
             <nav className='navbar'>
                 <a className='navbar-logo h-full' href="/">
                     <img src={ylxdefault} alt='logo' className='ylx_default'/>
-                    <div className="navbar-text self-center text-xl">YLX.com</div>
+                    <div className="navbar-text self-center">YLX.com</div>
                 </a>
 
                 <button className='toggle-btn' onClick={this.activateNav}>
