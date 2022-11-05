@@ -18,6 +18,7 @@ function SearchBar() {
 
     return (
         <>
+            
             <div className='main'>
                 <div className='search'>
                     <h1 className='search-title'>Cari Barang yang anda inginkan</h1>

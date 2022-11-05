@@ -226,8 +226,7 @@
     }
     
     .categories-list {
-        margin: 0.5rem;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
     }
 
     .categories-footer-button button {
@@ -256,5 +255,11 @@
         padding-top: 15px;
         margin-left: -5px;
         min-width: 60px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .categories-list {
+        margin: 1rem 4rem 1rem 4rem;
     }
 }

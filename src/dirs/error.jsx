@@ -4,7 +4,6 @@ import '../styles/error.css';
 
 function ErrorPage() {
 
-
     return (
         <div className='main'>
             <div className="error-page">

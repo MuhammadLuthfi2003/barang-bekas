@@ -16,15 +16,18 @@ import phone from '../assets/stock photos/phone.png';
 const items = [
     {
         title : 'Laptop',
-        image : laptop
+        image : laptop,
+        categoryId : 1
     },
     {
         title : 'Handphone',
-        image : phone
+        image : phone,
+        categoryId : 2
     },
     {
         title : 'Mobil',
-        image : car
+        image : car,
+        categoryId : 3
     }
 ]
 
@@ -69,7 +72,7 @@ function Landingpage() {
                     {
                         items.map((item, index) => {
                             return (
-                                <CategoryItem title={item.title} image={item.image} key={index}/>
+                                <CategoryItem title={item.title} image={item.image} categoryId={item.categoryId} key={index}/>
                             )
                         })
                     }
