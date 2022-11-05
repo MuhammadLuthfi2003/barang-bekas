@@ -7,13 +7,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 } 
 
 // membuat variabel untuk menampung data dari form
-$product_name        = mysqli_real_escape_string($conn, $_POST['name']);
-$product_description = mysqli_real_escape_string($conn, $_POST['description']);
-$product_stock      = mysqli_real_escape_string($conn, $_POST['stock']);
-$product_price       = mysqli_real_escape_string($conn, $_POST['price']);
-$product_weight       = mysqli_real_escape_string($conn, $_POST['weight']);
-$product_category     = mysqli_real_escape_string($conn, $_POST['category']);
-$product_image     = mysqli_real_escape_string($conn, $_FILES['image']['name']);
+$category_name        = mysqli_real_escape_string($conn, $_POST['name']);
+$category_image     = mysqli_real_escape_string($conn, $_FILES['image']['name']);
 
 
 //cek dulu jika ada gambar buku jalankan coding ini
@@ -27,7 +22,7 @@ $new_image_name = $random_number.'-'.$product_image; //menggabungkan angka acak 
       if(in_array($extension, $file_extension) === true)  {     
               move_uploaded_file($file_tmp, '../assets/img'.$new_image_name); //memindah file gambar ke folder gambar
                 // jalankan query INSERT untuk menambah data ke database pastikan sesuai urutan (id tidak perlu karena dibikin otomatis)
-                $query = "INSERT INTO product (name, description, image, price, stock, weight, category_id) VALUES ('$product_name', '$product_description', '$new_image_name', '$product_price', '$product_stock', '$product_weight', '$product_category')";
+                $query = "INSERT INTO category (name, image) VALUES ('$category_name', '$new_image_name')";
                 $result = mysqli_query($conn, $query);
                 // periska query apakah ada error
                 if(!$result){

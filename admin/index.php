@@ -1,5 +1,6 @@
 <?php
 require_once "../helper/conn.php";
+require_once "../helper/auth.php";
 ?>
 
 <!DOCTYPE html>
@@ -66,12 +67,12 @@ require_once "../helper/conn.php";
           </div>
           <div class="mt-8 flex justify-center">
               <div class="inline-flex rounded-md bg-white shadow">
-                  <a href="admin/add_product.php" class="text-gray-700 font-bold py-2 px-6">
+                  <a href="./add-product.php" class="text-gray-700 font-bold py-2 px-6">
                       Add Product +
                   </a>
               </div>
               <div class="inline-flex rounded-md bg-white shadow ml-4">
-                  <a href="add_book.php" class="text-gray-700 font-bold py-2 px-6">
+                  <a href="./category.php" class="text-gray-700 font-bold py-2 px-6">
                       Manage Category
                   </a>
               </div>
@@ -79,7 +80,7 @@ require_once "../helper/conn.php";
               if(isset($_SESSION["username"])) { //heredoc style
                   $logmes = <<<logmes
                   <div class="inline-flex ml-4 rounded-md bg-red-600 shadow">
-                    <a href="logout.php" class="text-white font-bold py-2 px-6" onclick="return confirm('Anda yakin Logout?')">
+                    <a href="/admin/logout.php" class="text-white font-bold py-2 px-6" onclick="return confirm('Anda yakin Logout?')">
                         Logout
                     </a>
                   </div>
@@ -128,7 +129,7 @@ require_once "../helper/conn.php";
                         <a href="admin/edit_book.php?id=<?php echo $row['id']; ?>" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
                             Edit
                         </a>
-                        <a href="admin/delete_book.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Anda yakin akan menghapus buku <?php echo $row['book_name']; ?>?')" class="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out">
+                        <a href="admin/delete_book.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Anda yakin akan menghapus buku <?php echo $row['name']; ?>?')" class="inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out">
                             Delete
                         </a>
                     </footer>

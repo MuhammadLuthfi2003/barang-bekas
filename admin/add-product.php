@@ -1,5 +1,6 @@
 <?php
-  require_once "../helper/conn.php"; //agar index terhubung dengan database, maka koneksi sebagai penghubung harus di include
+  require_once "../helper/conn.php";
+  require_once "../helper/auth.php"; //agar index terhubung dengan database, maka koneksi sebagai penghubung harus di include
 //   include 'auth.php'; //user access privileges
 ?>
 <!DOCTYPE html>
