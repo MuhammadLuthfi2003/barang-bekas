@@ -26,6 +26,12 @@
     $new_image_name = $random_number.'-'.$product_image; //menggabungkan angka acak dengan nama file sebenarnya
             if(in_array($extension, $file_extension) === true)  {     
                     move_uploaded_file($file_tmp, '../assets/img/'.$new_image_name); //memindah file gambar ke folder gambar
+                    $res=mysqli_query($conn,"SELECT * from product WHERE id = {$_POST['id']} limit 1");
+                    if($row=mysqli_fetch_assoc($res)) 
+                    {
+                        $deleteimage=$row['image']; 
+                    }
+                    unlink("../assets/img/".$deleteimage);
                     // jalankan query INSERT untuk menambah data ke database pastikan sesuai urutan (id tidak perlu karena dibikin otomatis)
                     $query = "UPDATE product SET name = '$product_name', description = '$product_description', image = '$new_image_name', price = '$product_price', stock = '$product_stock', weight = '$product_weight', category_id = '$product_category' WHERE id = {$_POST['id']}";
                     $result = mysqli_query($conn, $query);

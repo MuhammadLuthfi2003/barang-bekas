@@ -20,6 +20,12 @@
         $new_image_name = $random_number.'-'.$category_image; //combining the random number with the actual file name
         if(in_array($extension, $file_extension) === true)  {
             move_uploaded_file($file_tmp, '../assets/img/'.$new_image_name); //moving the image file to the image folder
+            $res=mysqli_query($conn,"SELECT * from category WHERE id = {$_POST['id']} limit 1");
+            if($row=mysqli_fetch_assoc($res)) 
+            {
+                $deleteimage=$row['image']; 
+            }
+            unlink("../assets/img/".$deleteimage);
             // run query INSERT to add data to the database make sure the order is correct (id is not needed because it is created automatically)
             $query = "UPDATE category SET name='$category_name', image='$new_image_name' WHERE id = {$_POST['id']}";
             $result = mysqli_query($conn, $query);

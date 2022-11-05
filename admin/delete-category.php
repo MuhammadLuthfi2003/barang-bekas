@@ -11,6 +11,14 @@
 
     $data = mysqli_fetch_assoc($result);
 
+    $res=mysqli_query($conn,"SELECT * from category WHERE id=$id limit 1");
+
+    if($row=mysqli_fetch_assoc($res)) 
+    {
+        $deleteimage=$row['image']; 
+    }
+    unlink("../assets/img/".$deleteimage);
+
     //jalankan query DELETE untuk menghapus data
     $query = "DELETE FROM category WHERE id='$id'";
     $hasil_query = mysqli_query($conn, $query);
