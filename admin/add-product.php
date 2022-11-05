@@ -21,7 +21,7 @@
       <form method="POST" action="adding-product.php" enctype="multipart/form-data" >
       
         <div>
-          <label>Nama Produk</label>
+          <label>Nama Kategori</label>
           <input type="text" name="name" class="w-full h-12 px-4 mb-2 text-lg text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline" autofocus="" required="" />
         </div>
         <div>
