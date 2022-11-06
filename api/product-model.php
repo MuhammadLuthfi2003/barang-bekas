@@ -61,6 +61,9 @@ class Product
         global $conn;
         global $image_base_url;
         $category_name = "SELECT name FROM category WHERE id=$category_id";
+        $category_name = $conn->query($category_name);
+        $category_name = mysqli_fetch_object($category_name);
+        $category_name = $category_name->name;
         $query = "SELECT * FROM product WHERE category_id=$category_id"; 
         $result = $conn->query($query);
         while ($row = mysqli_fetch_object($result)) 
