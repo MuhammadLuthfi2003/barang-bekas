@@ -40,3 +40,13 @@
     color: rgb(43, 43, 43);
     transition: all 0.3s ease-in-out;
 }
+
+.category-item-image-img {
+    height: 12rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .category-item-image-img {
+        height: 10rem;
+    }
+}

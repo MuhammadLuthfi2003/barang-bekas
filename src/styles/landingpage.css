@@ -57,7 +57,7 @@
     padding: 10px;
     border-radius: 0px 10px 10px 0px;
     border: 1px solid var(--lightblue);
-    background-color: var(--lightblue);
+    background-color: var(--darkblue);
     color: #fff;
     font-weight: 700;
     transition: all 0.3s ease-in-out;
@@ -67,10 +67,15 @@
     border: none;
 }
 
+.search-input-button:focus {
+    outline: 4px solid var(--lightblue);
+
+    transition: all 0.3s ease-in-out;
+}
+
 .search-input-button:hover {
     background-color: #fff;
     color: var(--lightblue);
-    outline: 4px solid var(--lightblue);
     transition: all 0.3s ease-in-out;
 }
 
@@ -227,6 +232,7 @@
     
     .categories-list {
         grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+        margin: 0.3rem;
     }
 
     .categories-footer-button button {
@@ -260,6 +266,6 @@
 
 @media only screen and (max-width: 480px) {
     .categories-list {
-        margin: 1rem 4rem 1rem 4rem;
+        margin: 0.3rem;
     }
 }

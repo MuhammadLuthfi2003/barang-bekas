@@ -80,7 +80,7 @@ function Landingpage() {
                 <div className="categories-footer">
                     <div className="categories-footer-text">dan lebih banyak lagi...</div>
                     <div className="categories-footer-button">
-                        <button type="button" className="categories-footer-button-text" onClick={() => {location.href = '/categories'}}>Lihat Semua</button>
+                        <button type="button" className="categories-footer-button-text" onClick={() => {location.href = '/categories/root'}}>Lihat Semua</button>
                     </div>
                 </div>
             </div>

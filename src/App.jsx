@@ -3,7 +3,8 @@ import {
     BrowserRouter,
     Routes as Switch,
     Route,
-    createRoutesFromElements
+    createRoutesFromElements,
+    Outlet
   } from "react-router-dom"
 
   // main css
@@ -46,6 +47,14 @@ const router = createBrowserRouter(
     )
 );
 
+function Empty() {
+    return (
+        <div className="main">
+            <Outlet/>
+        </div>
+    )
+}
+
 function App() {
     return (
         <BrowserRouter>
@@ -54,14 +63,21 @@ function App() {
                 <div className='main'>
                     <Switch>
                         <Route path='/' element={<Landingpage />} />
+{/* 
+                        <Route path='/categories' element={<Empty />} >
+                            <Route path='root' element={<CategoriesList />} />
+                            <Route path=':category' element={<SpecificCategories />} />
+                        </Route> */}
 
-                        <Route path='/categories' element={<CategoriesList />} />
-                        <Route path='/categories/:category' element={<SpecificCategories />} />
+                        <Route path='categories' >
+                            <Route index element={<CategoriesList />} />
+                            <Route path=':categoryTitle' element={<SpecificCategories />} />
+                        </Route>
 
-                        <Route path='/about' element={<About />} />
-                        <Route path='/contact' element={<Contact />} />
+                        <Route path='about' element={<About />} />
+                        <Route path='contact' element={<Contact />} />
 
-                        <Route path='/search' element={<SearchBar />} >
+                        <Route path='search' element={<SearchBar />} >
                             <Route path=':keyword' element={<SearchResults />} />
                         </Route>
 
