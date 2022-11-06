@@ -209,3 +209,28 @@ https://barbek.rf.gd/api/category?id={category_id}
   ]
 }
 ```
+
+### GET Admin Data
+
+#### Endpoint
+
+```
+https://barbek.rf.gd/api/admin
+```
+
+#### Payload
+
+```
+{
+  "status": 200,
+  "message": "success get admin data",
+  "data": [
+    {
+      "username": "admin",
+      "email": "admin@mail.com",
+      "wa": "62895331850313",
+      "role": "admin"
+    }
+  ]
+}
+```
