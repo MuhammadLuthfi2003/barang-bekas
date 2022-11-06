@@ -22,5 +22,6 @@
     } else {
         //display alert and will redirect to the index.php page
         //please change index.php to the desired page
-        echo "<script>alert('Profile successfully edited');window.location='/admin/profile.php';</script>";
+        $_SESSION['username'] = $admin_username;
+        echo "<script>alert('Profile successfully edited');window.location='/admin/';</script>";
     }

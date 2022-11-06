@@ -51,7 +51,7 @@
 
         <div class="bg-gradient-to-br from-sky-400 via-purple-600 to-purple-700 shadow-2xl rounded-lg mx-auto text-center py-12 mt-4">
           <h2 class="text-3xl leading-9 font-bold tracking-tight text-white sm:text-4xl sm:leading-10">
-              Dashboard Admin <?php echo($_SESSION['username']); ?>
+              Dashboard <?php echo($_SESSION['username']); ?>
           </h2>
           <?php
               if(isset($_SESSION["username"])) {

@@ -34,7 +34,7 @@
         <input name="id" value="<?php echo $data['id']; ?>"  hidden />
         <div>
           <label>Username</label>
-          <input type="text" name="name" value="<?php echo $data['username']; ?>" class="w-full h-12 px-4 mb-2 text-lg text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline" autofocus="" required="" />
+          <input type="text" name="username" value="<?php echo $data['username']; ?>" class="w-full h-12 px-4 mb-2 text-lg text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline" autofocus="" required="" />
         </div>
         <div>
           <label>Email</label>
@@ -49,7 +49,7 @@
           <input type="number" name="wa" value="<?php echo $data['wa']; ?>" class="w-full h-12 px-4 mb-2 text-lg text-gray-700 placeholder-gray-600 border rounded-lg focus:shadow-outline" required="" />
         </div>
         <div>
-         <button type="submit" class="mt-12 inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Edit Kategori</button>
+         <button type="submit" class="mt-12 inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Edit Profile</button>
         </div>
       </form>
     </section>
