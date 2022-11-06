@@ -13,7 +13,7 @@
     require_once '../helper/conn.php';
     session_start();
     if(isset($_SESSION["username"])) {
-        echo "<script>alert('anda sudah login " . $_SESSION['username'] . "!');window.location='dashboard.php';</script>";
+        echo "<script>alert('anda sudah login " . $_SESSION['username'] . "!');window.location='/admin/index.php';</script>";
     }
     // When form submitted, check and create user session.
     if (isset($_POST['username'])) {

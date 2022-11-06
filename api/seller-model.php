@@ -6,7 +6,7 @@ class Seller{
     public function get_all():void
     {
         global $conn;
-        $query = "SELECT * from seller";
+        $query = "SELECT * from admin";
         $data = array();
         $result = $conn->query($query);
         while ($row = mysqli_fetch_object($result)) 
@@ -25,7 +25,7 @@ class Seller{
     public function get_detail($id):void
     {
         global $conn;
-        $query = "SELECT * FROM seller WHERE id=$id";
+        $query = "SELECT * FROM admin WHERE id=$id";
         $result = $conn->query($query);
         while ($row = mysqli_fetch_object($result))
         {

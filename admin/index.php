@@ -60,14 +60,14 @@ require_once "../helper/auth.php";
           ?>
           <div class="mt-8 flex justify-center">
                 <div class="inline-flex rounded-md bg-white shadow">
-                  <a href="index.php" class="text-gray-700 font-bold py-2 px-6">
-                      Homepage
+                  <a href="/admin/edit-profile.php" class="text-gray-700 font-bold py-2 px-6">
+                      Edit Profile
                   </a>
               </div>
           </div>
           <div class="mt-8 flex justify-center">
               <div class="inline-flex rounded-md bg-white shadow">
-                  <a href="./add-product.php" class="text-gray-700 font-bold py-2 px-6">
+                  <a href="/admin/add-product.php" class="text-gray-700 font-bold py-2 px-6">
                       Add Product +
                   </a>
               </div>
