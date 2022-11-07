@@ -51,6 +51,7 @@ function App() {
                         </Route>
 
                         <Route path='item'>
+                            <Route index element={<ErrorPage />} />
                             <Route path=':itemId' element={<Item />} />
                         </Route>
 

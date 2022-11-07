@@ -1,7 +1,18 @@
 .category-title {
-    font-size: 1.5em;
+    font-size: 3rem;
     font-weight: 700;
     margin-bottom: 1em;
     margin-top: 1em;
     text-align: center;
+    color: var(--darkblue);
 }
+
+.item-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-bottom: 3rem;
+    grid-gap: 1rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+}
+

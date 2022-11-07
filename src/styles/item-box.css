@@ -39,6 +39,7 @@
 .item-button {
     display:flex;
     justify-content: end;
+    align-self: baseline;
 }
 
 .item-button-btn {
