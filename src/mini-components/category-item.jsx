@@ -5,13 +5,15 @@ import '../styles/category-item.css';
 function CategoryItem({image, title, categoryId}) {
 
     const handleRedirect = () => {
-        location.href = `/categories/${title}`;
+        location.href = `/categories/${categoryId}`;
     }
+
+    let capitalizedTitle = title[0].toUpperCase() + title.substring(1);
 
     return (
         <div className="category-item">
             <div className="category-item-title">
-                {title}
+                {capitalizedTitle}
             </div>
             <div className="category-item-image">
                 <img src={image} className="category-item-image-img"/>

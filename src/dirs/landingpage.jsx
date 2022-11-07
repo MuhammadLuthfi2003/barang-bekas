@@ -15,17 +15,17 @@ import phone from '../assets/stock photos/phone.png';
 
 const items = [
     {
-        title : 'Laptop',
+        title : 'laptop',
         image : laptop,
         categoryId : 1
     },
     {
-        title : 'Handphone',
+        title : 'handphone',
         image : phone,
         categoryId : 2
     },
     {
-        title : 'Mobil',
+        title : 'mobil',
         image : car,
         categoryId : 3
     }
@@ -80,7 +80,7 @@ function Landingpage() {
                 <div className="categories-footer">
                     <div className="categories-footer-text">dan lebih banyak lagi...</div>
                     <div className="categories-footer-button">
-                        <button type="button" className="categories-footer-button-text" onClick={() => {location.href = '/categories/root'}}>Lihat Semua</button>
+                        <button type="button" className="categories-footer-button-text" onClick={() => {location.href = '/categories'}}>Lihat Semua</button>
                     </div>
                 </div>
             </div>

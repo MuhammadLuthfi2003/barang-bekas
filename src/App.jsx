@@ -18,7 +18,7 @@ import About from './dirs/about.jsx';
 import Contact from './dirs/contact.jsx';
 import ErrorPage from './dirs/error.jsx';
 // category dir
-import CategoriesList from './dirs/categories.jsx';
+import Categories from './dirs/categories.jsx';
 import SpecificCategories from './dirs/spesific-categories.jsx';
 // searchdir
 import SearchBar from './dirs/searchbar.jsx';
@@ -32,7 +32,7 @@ import {
 const router = createBrowserRouter(
     createRoutesFromElements(
             <Route path='/' element={<Landingpage />} >
-                <Route path='categories' element={<CategoriesList />} />
+                <Route path='categories' element={<Categories />} />
                 <Route path='categories/:category' element={<SpecificCategories />} />
 
                 <Route path='about' element={<About />} />
@@ -70,8 +70,8 @@ function App() {
                         </Route> */}
 
                         <Route path='categories' >
-                            <Route index element={<CategoriesList />} />
-                            <Route path=':categoryTitle' element={<SpecificCategories />} />
+                            <Route index element={<Categories />} />
+                            <Route path=':categoryId' element={<SpecificCategories />} />
                         </Route>
 
                         <Route path='about' element={<About />} />

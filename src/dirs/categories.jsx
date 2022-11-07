@@ -1,14 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 
+import CategoryItem from '../mini-components/category-item';
 
-function CategoriesList() {
+import '../styles/categories.css';
+
+const BASE_URL = 'https://barbek.masuk.id/api/category';
+
+function Categories() {
+
+    const [categories, setCategories] = useState(null);
+
+    React.useEffect(() => {
+        axios.get(BASE_URL)
+            .then(res => {
+                setCategories(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }, []);
+
+    if (!categories) return null; 
+      
     return (
         <div className='main'>
             <div className='categories'>
-                <h1>Categories</h1>
+                <h1 className='categories-title'>Our Categories</h1>
+                <div className='categories-list'>
+                    {
+                        categories.map((category, index) => {
+                            return (
+                                <CategoryItem
+                                    key={index}
+                                    image={category.image}
+                                    title={category.name}
+                                    categoryId={category.id}
+                                />
+                            )
+                        })
+                    }
+                </div>
             </div>
         </div>
     )
 }
 
-export default CategoriesList;
+export default Categories;

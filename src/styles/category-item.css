@@ -43,10 +43,12 @@
 
 .category-item-image-img {
     height: 12rem;
+    width: 20rem;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 480px) {
     .category-item-image-img {
         height: 10rem;
+        width: 15rem;
     }
 }
