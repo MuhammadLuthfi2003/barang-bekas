@@ -47,8 +47,6 @@ function SpecificCategories() {
         .catch(err => {
             console.log(err);
         })
-
-        
     });
 
     if (!item) return null; 
@@ -57,11 +55,25 @@ function SpecificCategories() {
 
     return (
         <div className="main">
-            <div className="Title">
+            <div className="category-title">
                 <h1>{category}</h1>
             </div>
             <div className="item-list">
-
+                {
+                    item.map((item, index) => {
+                        return (
+                            <ItemBox 
+                                key={index}
+                                image={item.image}
+                                title={item.name}
+                                price={item.price}
+                                description={item.description}
+                                itemId={item.id}
+                                category={categoryId}
+                            />
+                        )
+                    })
+                }
             </div>
         </div>
     )

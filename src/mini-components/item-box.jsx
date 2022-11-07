@@ -4,7 +4,7 @@ import axios from "axios";
 
 import '../styles/item-box.css';
 
-function ItemBox({title, image, description, price, itemId}) {
+function ItemBox({title, image, description, price, itemId, categoryId}) {
 
     const handleButtonClick = () => {
         location.href = `/item/${itemId}`;
@@ -22,14 +22,14 @@ function ItemBox({title, image, description, price, itemId}) {
                 <div className='item-description'>
                     {description}
                 </div>
-            </div>
 
-            <div className='item-price'>
-                {price}
-            </div>
+                <div className='item-price'>
+                    Rp. {price}
+                </div>
 
-            <div className='item-button'>
-                <button className='item-button-btn' onClick={() => {handleButtonClick()}}>Lihat</button>
+                <div className='item-button'>
+                    <button className='item-button-btn' onClick={() => {handleButtonClick()}}>Lihat</button>
+                </div>
             </div>
 
         </div>

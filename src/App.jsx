@@ -20,6 +20,8 @@ import ErrorPage from './dirs/error.jsx';
 // category dir
 import Categories from './dirs/categories.jsx';
 import SpecificCategories from './dirs/spesific-categories.jsx';
+import Item from './dirs/item.jsx';
+
 // searchdir
 import SearchBar from './dirs/searchbar.jsx';
 import SearchResults from './dirs/searchresults.jsx';
@@ -28,32 +30,6 @@ import {
     createBrowserRouter,
     RouterProvider
 } from "react-router-dom";
-
-const router = createBrowserRouter(
-    createRoutesFromElements(
-            <Route path='/' element={<Landingpage />} >
-                <Route path='categories' element={<Categories />} />
-                <Route path='categories/:category' element={<SpecificCategories />} />
-
-                <Route path='about' element={<About />} />
-                <Route path='contact' element={<Contact />} />
-
-                <Route path='search' element={<SearchBar />} >
-                    <Route path=':keyword' element={<SearchResults />} />
-                </Route>
-
-                <Route path="*" element={<ErrorPage />} />
-            </Route>
-    )
-);
-
-function Empty() {
-    return (
-        <div className="main">
-            <Outlet/>
-        </div>
-    )
-}
 
 function App() {
     return (
@@ -72,6 +48,10 @@ function App() {
                         <Route path='categories' >
                             <Route index element={<Categories />} />
                             <Route path=':categoryId' element={<SpecificCategories />} />
+                        </Route>
+
+                        <Route path='item'>
+                            <Route path=':itemId' element={<Item />} />
                         </Route>
 
                         <Route path='about' element={<About />} />
