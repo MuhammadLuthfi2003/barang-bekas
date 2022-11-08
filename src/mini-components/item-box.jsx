@@ -10,6 +10,11 @@ function ItemBox({title, image, description, price, itemId, categoryId}) {
         location.href = `/item/${itemId}`;
     }
 
+    const formatCurrency = (num) => {
+        num = parseInt(num);
+        return new Intl.NumberFormat("id-ID", {style: "currency", currency: "IDR"}).format(num);
+    }
+
     return (
         <div className="item-card">
             <div className="item-image">
@@ -20,11 +25,11 @@ function ItemBox({title, image, description, price, itemId, categoryId}) {
                     {title}
                 </div>
                 <div className='item-description'>
-                    {description}
+                    {description.slice(0,151)}...
                 </div>
 
                 <div className='item-price'>
-                    Rp. {price}
+                    {formatCurrency(price)}
                 </div>
 
                 <div className='item-button'>

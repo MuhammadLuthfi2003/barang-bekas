@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import axios from 'axios';
 
 //import mini component
 import CategoryItem from '../mini-components/category-item';
@@ -31,9 +32,12 @@ const items = [
     }
 ]
 
+const BASE_URL = 'https://barbek.masuk.id/api/category';
+
 function Landingpage() {
 
     const [search,setSearch] = useState('');
+    const [categories, setCategories] = useState(null);
 
     const handleKeyDown = event => {
     
@@ -42,7 +46,18 @@ function Landingpage() {
         }
     };
 
+    React.useEffect(() => {
+        axios.get(BASE_URL)
+        .then(res => {
+            //only display 3 categories for landing page
+            setCategories(res.data.data.slice(0,3));
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    })
 
+    if (!categories) return null;
 
     return (
         <div className='main'>
@@ -70,9 +85,13 @@ function Landingpage() {
                 </div>
                 <div className="categories-list">
                     {
-                        items.map((item, index) => {
+                        categories.map((category, index) => {
                             return (
-                                <CategoryItem title={item.title} image={item.image} categoryId={item.categoryId} key={index}/>
+                                <CategoryItem 
+                                key={index}
+                                title={category.name}
+                                image={category.image}
+                                categoryId={category.id}/>
                             )
                         })
                     }

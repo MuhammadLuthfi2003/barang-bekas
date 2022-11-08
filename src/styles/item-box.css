@@ -5,6 +5,7 @@
     border-radius: 20px;
     filter: drop-shadow(10px 10px 25px 0px rgba(0,0,0,0.42));
     box-shadow: rgb(119, 119, 119) 0em 0.2em 0.5em;
+    height: min-content;
 }
 
 .item-image-img {
@@ -27,6 +28,7 @@
     font-size: 1rem;
     margin-bottom: 1.5rem;
     color:rgb(90, 90, 90);
+    white-space: pre-wrap;
 }
 
 .item-price {
