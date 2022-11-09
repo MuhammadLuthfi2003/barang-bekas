@@ -8,6 +8,12 @@
     height: min-content;
 }
 
+.contact-link-a {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
 .item-image-img {
     height: 12rem;
     width: 20rem;

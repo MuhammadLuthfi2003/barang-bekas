@@ -8,30 +8,6 @@ import CategoryItem from '../mini-components/category-item';
 //import css
 import '../styles/landingpage.css';
 
-// temp import img, delete later
-import car from '../assets/stock photos/car.png';
-import laptop from '../assets/stock photos/laptop.png';
-import phone from '../assets/stock photos/phone.png';
-
-
-const items = [
-    {
-        title : 'laptop',
-        image : laptop,
-        categoryId : 1
-    },
-    {
-        title : 'handphone',
-        image : phone,
-        categoryId : 2
-    },
-    {
-        title : 'mobil',
-        image : car,
-        categoryId : 3
-    }
-]
-
 const BASE_URL = 'https://barbek.masuk.id/api/category';
 
 function Landingpage() {
