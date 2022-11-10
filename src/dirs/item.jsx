@@ -8,58 +8,101 @@ import ItemBox from '../mini-components/item-box.jsx';
 
 const BASE_URL = 'https://barbek.masuk.id/api/product?id=';
 const BASE_URL_CATEGORY = "https://barbek.masuk.id/api/product?category=";
+const RECOMMENDED_KEY = 'recommendations';
 
 function Item() {
     const {itemId} = useParams();
 
     const [item, setItem] = useState(null);
     const [idCategory, setIdCategory] = useState(null);
-    const [relatedItems, setRelatedItems] = useState(null);
+    const [relatedItems, setRelatedItems] = useState('');
 
     const formatCurrency = (num) => {
         num = parseInt(num);
         return new Intl.NumberFormat("id-ID", {style: "currency", currency: "IDR"}).format(num);
     }
 
+    const randomize = (array) => {
+        let currentIndex = array.length,  randomIndex;
+
+        // While there remain elements to shuffle.
+        while (currentIndex != 0) {
+      
+          // Pick a remaining element.
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex--;
+      
+          // And swap it with the current element.
+          [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+        }
+        return array;
+    }
+
+    const setRecommendations = (items) => {
+        sessionStorage.setItem(RECOMMENDED_KEY, JSON.stringify(items));
+    }
+
+    const getRecommendations = () => {
+        return JSON.parse(sessionStorage.getItem(RECOMMENDED_KEY));
+    }
+
     React.useEffect(() => {
+        //set storage
+        if(typeof(Storage) !== 'undefined') {
+            //check if it exists
+            if(sessionStorage.getItem(RECOMMENDED_KEY)) {
+                const recommendations = JSON.parse(sessionStorage.getItem(RECOMMENDED_KEY));
+            } else {
+                sessionStorage.setItem(RECOMMENDED_KEY, JSON.stringify([]));
+            }
+        }
+
         axios.get(BASE_URL + itemId)
             .then(res => {
                 setItem(res.data.data[0]);
                 setIdCategory(res.data.data[0].category_id);
-            })
-            .then(() => {
-                axios.get(BASE_URL_CATEGORY + idCategory)
+                
+                axios.get(BASE_URL_CATEGORY + res.data.data[0].category_id)
                     .then(res => {
-                        setRelatedItems(res.data.data);
-                    })
-                    .then(() => {
+                        const categoryItems = res.data.data;
+                        let recommended = []
 
+                        for (let i = 0; i < categoryItems.length; i++) {
+                            if (categoryItems[i].id !== itemId) {
+                                recommended.push(categoryItems[i]);
+                            }
+                        }
+
+                        const shuffledRecommended = randomize(recommended);     
+                        setRecommendations(shuffledRecommended);
+                        
                     })
-                    .catch(err =>{
+                    .catch(err => {
                         console.log(err);
                     })
             })
+            // .then(() => {
+
+            //     // axios.get(BASE_URL_CATEGORY + idCategory)
+            //     //     .then(res => {
+            //     //         setRelatedItems(res.data.data);
+            //     //     })
+            //     //     .then(() => {
+
+            //     //     })
+            //     //     .catch(err =>{
+            //     //         console.log(err);
+            //     //     })
+            // })
             .catch(err => {
                 console.log(err);
-            })
-
-        //fetch category data for item recommendation
-        // axios.get(BASE_URL_CATEGORY + idCategory)
-        //     .then(function(res) {
-        //         setRelatedItems(res.data.data);
-        //     })
-        //     .catch(err => {
-        //         console.log(err);
-        //     })
-        
-        
-            
+            })        
     }, []);
-
 
     if (!item) return null;
     if (!idCategory) return null;
-    if (!relatedItems) return null;
+    // if (!relatedItems) return null;
 
 
     return (
@@ -102,26 +145,26 @@ function Item() {
                 </div>
 
                 {/*recommendation system, will be later added .\ */}            
-                {/* <div className='recommended-products'>
+                <div className='recommended-products'>
                     <div className='recommended-products-title'>Rekomendasi Produk Lainnya</div>
                     <div className='recommended-products-list'>
                         {
-                            // relatedItems.map((item, index) => {
-                            //     return (
-                            //         <ItemBox
-                            //             key={index}
-                            //             title={item.name}
-                            //             image={item.image}
-                            //             description={item.description}
-                            //             price={item.price}
-                            //             itemId={item.id}
-                            //             categoryId={item.category_id}
-                            //         />
-                            //     )
-                            // })
+                            getRecommendations().map((item, index) => {
+                                return (
+                                    <ItemBox
+                                        key={index}
+                                        title={item.name}
+                                        image={item.image}
+                                        description={item.description}
+                                        price={item.price}
+                                        itemId={item.id}
+                                        categoryId={item.category_id}
+                                    />
+                                )
+                            })
                         }
                     </div>
-                </div> */}
+                </div>
 
             </div>
         </div>

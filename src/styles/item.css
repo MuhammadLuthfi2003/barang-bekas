@@ -91,3 +91,11 @@
     margin-right: 0.5rem;
 }
 
+.recommended-products-title {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 0.2em;
+    margin-top: 1rem;
+    color: var(--darkestblue);
+}
+
