@@ -22,7 +22,7 @@ weight: "1300"
 
 function SpecificCategories() {
 
-    const [item, setItem] = useState(null);
+    const [item, setItem] = useState([]);
     const [category, setCategory] = useState(null);
 
     let {categoryId} = useParams();
@@ -31,17 +31,10 @@ function SpecificCategories() {
         // getting the items in the category
         axios.get(BASE_URL + categoryId)
         .then(res => {
-            setItem(res.data.data);
-        })
-        .catch(err => {
-            console.log(err);
-        })
-
-        //get category title by id
-        axios.get(BASE_URL_CATEGORY + categoryId)
-        .then(res => {
-            setCategory(res.data.data[0].name);
-            //capitalize it
+            if (res.data.data != null) {
+                setItem(res.data.data);
+            }
+            setCategory(res.data.category);
             setCategory(category[0].toUpperCase() + category.substring(1));
         })
         .catch(err => {
@@ -52,14 +45,14 @@ function SpecificCategories() {
     if (!item) return null; 
 
     
-
     return (
-        <div className="main">
+        <div className="category-content">
             <div className="category-title">
                 <h1>{category}</h1>
             </div>
             <div className="item-list">
                 {
+                    (item.length > 0) ?
                     item.map((item, index) => {
                         return (
                             <ItemBox 
@@ -73,6 +66,11 @@ function SpecificCategories() {
                             />
                         )
                     })
+
+                    :
+                    <div className="no-item">
+                        <h1>Belum ada item di kategori ini</h1>
+                    </div>
                 }
             </div>
         </div>

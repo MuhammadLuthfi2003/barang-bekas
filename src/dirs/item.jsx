@@ -50,12 +50,7 @@ function Item() {
     React.useEffect(() => {
         //set storage
         if(typeof(Storage) !== 'undefined') {
-            //check if it exists
-            if(sessionStorage.getItem(RECOMMENDED_KEY)) {
-                const recommendations = JSON.parse(sessionStorage.getItem(RECOMMENDED_KEY));
-            } else {
-                sessionStorage.setItem(RECOMMENDED_KEY, JSON.stringify([]));
-            }
+            sessionStorage.setItem(RECOMMENDED_KEY, JSON.stringify([]));
         }
 
         axios.get(BASE_URL + itemId)
@@ -99,6 +94,7 @@ function Item() {
                 console.log(err);
             })        
     }, []);
+
 
     if (!item) return null;
     if (!idCategory) return null;
@@ -149,6 +145,9 @@ function Item() {
                     <div className='recommended-products-title'>Rekomendasi Produk Lainnya</div>
                     <div className='recommended-products-list'>
                         {
+                            (getRecommendations.length > 0)
+
+                            ?
                             getRecommendations().map((item, index) => {
                                 return (
                                     <ItemBox
@@ -162,6 +161,11 @@ function Item() {
                                     />
                                 )
                             })
+
+                            :
+                            <div className='no-item'>
+                                <div className='no-item-title'>Tidak ada rekomendasi lainnya</div>
+                            </div>
                         }
                     </div>
                 </div>
