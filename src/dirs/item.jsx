@@ -44,10 +44,10 @@ function Item() {
     const setRecommendations = (items) => {
         sessionStorage.setItem(RECOMMENDED_KEY, JSON.stringify(items));
         setRelatedItems(items);
-        console.log(items);
     }
 
     const getRecommendations = () => {
+        // setRelatedItems(sessionStorage.getItem(RECOMMENDED_KEY));
         return JSON.parse(sessionStorage.getItem(RECOMMENDED_KEY));
     }
 
@@ -85,7 +85,6 @@ function Item() {
 
                         const shuffledRecommended = randomize(recommended);     
                         setRecommendations(shuffledRecommended);
-
                         
                     })
                     .catch(err => {
@@ -160,9 +159,9 @@ function Item() {
                     <div className='recommended-products-title'>Rekomendasi Produk Lainnya</div>
                     <div className='recommended-products-list'>
                         {
-                            getStorageLength(RECOMMENDED_KEY) > 0 
+                            relatedItems.length > 0 
                             ?
-                            getRecommendations().map((item, index) => {
+                            relatedItems.map((item, index) => {
                                 return (
                                     <ItemBox
                                         key={index}
