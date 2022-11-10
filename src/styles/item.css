@@ -1,6 +1,7 @@
-.item-dir {
-    padding: 3rem;
-}
+.item-specific-title, .item-specific-visual, .item-specific-detail, .recommended-products-title {
+    padding-left: 3rem;
+    padding-right: 3rem;
+} 
 
 .item-specific-title {
     font-size: 2.5rem;
@@ -25,7 +26,7 @@
 }
 
 .item-specific-image img {
-    width: 45rem;
+    width: 40rem;
     height: 30rem;
     object-fit: cover;
     border-radius: 20px;
@@ -52,6 +53,7 @@
 .recommended-products-list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    overflow-x:scroll;
 }
 
 .harga-title {
@@ -101,3 +103,76 @@
     color: var(--darkestblue);
 }
 
+@media screen and (max-width: 1200px) {
+    .item-specific-image img {
+        width: 30rem;
+        height: 20rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .item-specific-image img {
+        width: 20rem;
+        height: 15rem;
+    }
+
+    .contact-info {
+        width: 20rem;
+    }
+
+    .contact-link-a {
+        width: 70%;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .item-specific-image img {
+        width: 100%;
+        height: 15rem;
+    }
+
+    .contact-info {
+        width: 15rem;
+    }
+
+    .contact-link-a {
+        width: 100%;
+    }
+
+    .recommended-products-title {
+
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .item-specific-visual {
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+
+    .item-specific-image img {
+        width: 100%;
+        height: 15rem;
+    }
+
+    .contact-info {
+        margin: auto;
+        width: 80%;
+    }
+
+    .item-specific-title {
+        text-align: center;
+    }
+
+    .item-specific-detail {
+        margin-top: 2rem;
+    }
+
+    .recommended-products-title {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+}
