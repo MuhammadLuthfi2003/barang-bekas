@@ -39,29 +39,43 @@ function Item() {
         return array;
     }
 
+    
+
     const setRecommendations = (items) => {
         sessionStorage.setItem(RECOMMENDED_KEY, JSON.stringify(items));
+        setRelatedItems(items);
+        console.log(items);
     }
 
     const getRecommendations = () => {
         return JSON.parse(sessionStorage.getItem(RECOMMENDED_KEY));
     }
 
+    const getStorageLength = (key) => {
+        return JSON.parse(sessionStorage.getItem(key)).length;
+    }
+
+    const startSession = () => {
+        sessionStorage.clear();
+        if(typeof(Storage) !== 'undefined') {
+            setRecommendations([]);
+        }
+    }
+
     React.useEffect(() => {
         //set storage
-        if(typeof(Storage) !== 'undefined') {
-            sessionStorage.setItem(RECOMMENDED_KEY, JSON.stringify([]));
-        }
 
         axios.get(BASE_URL + itemId)
             .then(res => {
                 setItem(res.data.data[0]);
                 setIdCategory(res.data.data[0].category_id);
                 
+                
                 axios.get(BASE_URL_CATEGORY + res.data.data[0].category_id)
                     .then(res => {
+                        startSession();
                         const categoryItems = res.data.data;
-                        let recommended = []
+                        let recommended = [];
 
                         for (let i = 0; i < categoryItems.length; i++) {
                             if (categoryItems[i].id !== itemId) {
@@ -71,6 +85,7 @@ function Item() {
 
                         const shuffledRecommended = randomize(recommended);     
                         setRecommendations(shuffledRecommended);
+
                         
                     })
                     .catch(err => {
@@ -95,7 +110,7 @@ function Item() {
             })        
     }, []);
 
-
+    console.log(getRecommendations());
     if (!item) return null;
     if (!idCategory) return null;
     // if (!relatedItems) return null;
@@ -145,8 +160,7 @@ function Item() {
                     <div className='recommended-products-title'>Rekomendasi Produk Lainnya</div>
                     <div className='recommended-products-list'>
                         {
-                            (getRecommendations.length > 0)
-
+                            getStorageLength(RECOMMENDED_KEY) > 0 
                             ?
                             getRecommendations().map((item, index) => {
                                 return (
@@ -161,11 +175,8 @@ function Item() {
                                     />
                                 )
                             })
-
                             :
-                            <div className='no-item'>
-                                <div className='no-item-title'>Tidak ada rekomendasi lainnya</div>
-                            </div>
+                            <div className='no-item'>Tidak ada rekomendasi</div>
                         }
                     </div>
                 </div>
