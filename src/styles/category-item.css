@@ -47,6 +47,7 @@
     width: 20rem;
 }
 
+
 @media only screen and (max-width: 480px) {
     .category-item-image-img {
         height: 10rem;

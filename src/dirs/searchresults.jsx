@@ -34,6 +34,9 @@ function SearchResults() {
                     <h1 className='search-results-title'>Hasil pencarian untuk: {keyword}</h1>
                     <div className='search-results-wrapper'>
                         {
+                            results.length > 0 
+
+                            ?
                             results.map((item, index) => {
                                 return (
                                     <ItemBox 
@@ -47,6 +50,9 @@ function SearchResults() {
                                     />
                                 )
                             })
+
+                            :
+                            <h1 className='no-item'>Tidak ada hasil untuk pencarian: {keyword}</h1>
                         }
                     </div>
                 </div>

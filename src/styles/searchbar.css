@@ -21,3 +21,27 @@
     color: var(--darkestblue);
     margin-bottom: 1rem;
 }
+
+@media only screen and (max-width: 600px) {
+    .search-input-field-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .search-input-button {
+        width: 75%;
+        margin: 1rem auto;
+        border-radius: 10px;
+    }
+
+    .search-input-field {
+        width: 100%;
+        margin: 1rem auto;
+        border-radius: 10px;
+    }
+
+    .search-icon {
+        padding-top: 30px;
+        margin-left: -5px;
+    }
+}

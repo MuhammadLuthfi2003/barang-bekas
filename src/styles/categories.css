@@ -16,4 +16,19 @@
     .categories-title {
         font-size: 3rem;
     }
+
+    .categories-list {
+        width: 60%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .categories-title {
+        font-size: 2rem;
+    }
+
+    .categories-list {
+        width: 75%;
+    }
 }
