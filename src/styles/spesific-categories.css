@@ -32,9 +32,17 @@
     }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 600px) {
+    .category-title {
+        font-size: 2rem;
+    }
+
     .item-list {
         width: 80%;
         margin: 0 auto;
     }
+}
+
+@media only screen and (max-width: 480px) {
+
 }

@@ -66,3 +66,31 @@
     color: rgb(43, 43, 43);
     transition: all 0.3s ease-in-out;
 }
+
+@media screen and (max-width: 600px) {
+    .item-card {
+        width: 15rem;
+    }
+
+    .item-image-img {
+        width: 15rem;
+        height : 10rem;
+    }
+
+    .item-title {
+        font-size: 1rem;
+    }
+
+    .item-description {
+        font-size: 0.8rem;
+    }
+
+    .item-price {
+        font-size: 1rem;
+    }
+
+    .item-button-btn {
+        font-size: 1rem;
+        width: 100%;
+    }
+}

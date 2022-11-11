@@ -269,4 +269,25 @@
         width: 75%;
         margin: 0 auto;
     }
+
+    .why-ylx-header {
+        font-size: 2rem;
+    }
+
+    .why-ylx-icon-truck {
+        font-size: 5rem;
+        
+    }
+    
+    .why-ylx-icon-phone {
+        font-size: 5rem;
+    }
+    
+    .why-ylx-icon-card {
+        font-size: 5rem;
+    }
+
+    .why-ylx-list-item-text {
+        font-size: 1.5rem;
+    }
 }
