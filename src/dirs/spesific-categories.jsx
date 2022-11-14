@@ -50,7 +50,7 @@ function SpecificCategories() {
             <div className="category-title">
                 <h1>{category}</h1>
             </div>
-            <div className="item-list">
+            {/* <div className="item-list">
                 {
                     (item.length > 0) ?
                     item.map((item, index) => {
@@ -72,7 +72,33 @@ function SpecificCategories() {
                         <h1>Belum ada item di kategori ini</h1>
                     </div>
                 }
+            </div> */}
+
+            {
+                (item.length > 0) ?
+                <div className='item-list'>
+                {
+                    item.map((item, index) => {
+                        return (
+                            <ItemBox 
+                                key={index}
+                                image={item.image}
+                                title={item.name}
+                                price={item.price}
+                                description={item.description}
+                                itemId={item.id}
+                                category={categoryId}
+                            />
+                        )
+                    })
+                }
+                </div>
+            
+            :
+            <div className="no-item">
+                <h1>Belum ada item di kategori ini</h1>
             </div>
+            }
         </div>
     )
 }

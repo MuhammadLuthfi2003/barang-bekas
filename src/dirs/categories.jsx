@@ -27,7 +27,7 @@ function Categories() {
         <div className='main'>
             <div className='categories'>
                 <h1 className='categories-title'>Our Categories</h1>
-                <div className='categories-list'>
+                {/* <div className='categories-list'>
                     {
                         categories.map((category, index) => {
                             return (
@@ -40,7 +40,30 @@ function Categories() {
                             )
                         })
                     }
-                </div>
+                </div> */}
+
+                {
+                    (categories.length > 0)
+
+                    ?
+                    <div className='categories-list'>
+                        {
+                            categories.map((category, index) => {
+                                return (
+                                    <CategoryItem
+                                        key={index}
+                                        image={category.image}
+                                        title={category.name}
+                                        categoryId={category.id}
+                                    />
+                                )
+                            })
+                        }
+                    </div>
+
+                    :
+                    <h1 className='no-item'>Tidak ada kategori yang ditemukan</h1>
+                }
             </div>
         </div>
     )

@@ -32,9 +32,9 @@ function SearchResults() {
             <div className='main'>
                 <div className='search-results'>
                     <h1 className='search-results-title'>Hasil pencarian untuk: {keyword}</h1>
-                    <div className='search-results-wrapper'>
+                    {/* <div className='search-results-wrapper'>
                         {
-                            results.length > 0 
+                            (results.length > 0) 
 
                             ?
                             results.map((item, index) => {
@@ -54,7 +54,32 @@ function SearchResults() {
                             :
                             <h1 className='no-item'>Tidak ada hasil untuk pencarian: {keyword}</h1>
                         }
-                    </div>
+                    </div> */}
+
+                    {
+                        (results.length > 0) 
+                        ?
+                        <div className='search-results-wrapper'>
+                            {
+                                results.map((item, index) => {
+                                    return (
+                                        <ItemBox 
+                                        key={index}
+                                        image={item.image}
+                                        title={item.name}
+                                        price={item.price}
+                                        description={item.description}
+                                        itemId={item.id}
+                                        // category={categoryId}
+                                        />
+                                    )
+                                })
+                            }
+                        </div>
+
+                        :
+                        <h1 className='no-item'>Tidak ada hasil untuk pencarian: {keyword}</h1>
+                    }
                 </div>
             </div>
         </>

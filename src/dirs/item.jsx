@@ -91,19 +91,6 @@ function Item() {
                         console.log(err);
                     })
             })
-            // .then(() => {
-
-            //     // axios.get(BASE_URL_CATEGORY + idCategory)
-            //     //     .then(res => {
-            //     //         setRelatedItems(res.data.data);
-            //     //     })
-            //     //     .then(() => {
-
-            //     //     })
-            //     //     .catch(err =>{
-            //     //         console.log(err);
-            //     //     })
-            // })
             .catch(err => {
                 console.log(err);
             })        
@@ -157,7 +144,7 @@ function Item() {
                 {/*recommendation system, will be later added .\ */}            
                 <div className='recommended-products'>
                     <div className='recommended-products-title'>Rekomendasi Produk Lainnya</div>
-                    <div className='recommended-products-list'>
+                    {/* <div className='recommended-products-list'>
                         {
                             relatedItems.length > 0 
                             ?
@@ -177,7 +164,32 @@ function Item() {
                             :
                             <div className='no-item'>Tidak ada rekomendasi</div>
                         }
-                    </div>
+                    </div> */}
+
+                    {
+                        (relatedItems.length > 0) 
+                        ?
+                        <div className='recommended-products-list'>
+                            {
+                                relatedItems.map((item, index) => {
+                                    return (
+                                        <ItemBox
+                                            key={index}
+                                            title={item.name}
+                                            image={item.image}
+                                            description={item.description}
+                                            price={item.price}
+                                            itemId={item.id}
+                                            categoryId={item.category_id}
+                                        />
+                                    )
+                                })
+                            }
+                        </div>
+
+                        :
+                        <div className='no-item'>Tidak ada rekomendasi</div>
+                    }
                 </div>
 
             </div>
